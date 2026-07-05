@@ -114,34 +114,9 @@ visit-vista-cli/
 └── visitVista.go
 ```
 
-## Screenshots
+## Application Preview
 
-Screenshots can be added to help users understand how the application works without running it first.
-
-Recommended screenshots:
-
-```txt
-docs/screenshots/main-menu.png
-docs/screenshots/add-destination.png
-docs/screenshots/destination-list.png
-docs/screenshots/search-result.png
-```
-
-Example README format after adding screenshots:
-
-```md
-### Main Menu
-
-![Main Menu](docs/screenshots/main-menu.png)
-
-### Destination List
-
-![Destination List](docs/screenshots/destination-list.png)
-```
-
-## Demo Account
-
-This project does not require a demo account because it is a command-line application without authentication.
+VisitVista CLI uses a terminal-based interface where users can manage tourism destination data through a numbered menu. The application can be tested directly by running the program using the setup instructions above.
 
 ## My Role
 
