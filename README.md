@@ -1,81 +1,81 @@
 # VisitVista CLI
 
-VisitVista CLI is a simple command-line application built with Go for managing tourism destination data. The application allows users to add, edit, delete, view, search, and sort tourism destination records through an interactive terminal menu.
+VisitVista CLI is a simple command-line application built with Go for managing tourism destination data. It allows users to add, edit, delete, view, search, and sort tourism destination records through an interactive terminal menu.
 
-This project was created as an introductory programming project to practice basic data management logic, structured programming, and fundamental Go concepts.
+This project was developed as an introductory programming project to practice fundamental programming concepts, especially data structuring, CRUD operations, searching, sorting, and terminal-based user interaction.
 
-## Project Overview
+---
 
-VisitVista CLI provides a basic tourism destination management system that runs directly in the terminal. Users can manage destination information such as name, location, entrance fee, distance, rating, and description.
+## ✨ Key Features
 
-The application stores data temporarily in memory using arrays and structs, without database integration. This makes the project suitable for understanding core programming concepts before moving into more advanced topics such as persistent storage, APIs, or web-based applications.
+* **Add Destination Data:** Add new tourism destinations with details such as name, location, entrance fee, distance, rating, and description.
+* **Edit Destination Data:** Update existing destination information based on its ID.
+* **Delete Destination Data:** Remove tourism destination records from the list.
+* **View Destination List:** Display all stored tourism destination data.
+* **View Destination Description:** Show detailed descriptions of selected destinations.
+* **Search Destinations:** Search tourism destinations by name, location, entrance fee range, distance range, or rating range.
+* **Sort Destinations:** Sort tourism destinations by distance, entrance fee, or rating.
+* **Interactive CLI Menu:** Navigate the application through a simple numbered terminal menu.
 
-## Problem / Context
+---
 
-Tourism destination data often needs to be organized based on several criteria, such as location, entrance fee, distance, and rating. This project simulates a simple system that helps users manage and filter destination records through a command-line interface.
+## 🛠️ Tech Stack
 
-The main purpose of this project is to demonstrate basic CRUD operations, searching, sorting, input handling, and data structuring in Go.
+* **Programming Language:** Go
+* **Interface:** Command-Line Interface
+* **Data Storage:** In-memory storage using array and struct
+* **Core Concepts:** CRUD, searching, sorting, loops, conditionals, functions, and structured data
 
-## Features
+---
 
-* Add new tourism destination data
-* Edit existing destination information
-* Delete destination data by ID
-* View all destination records
-* View detailed destination descriptions
-* Search destinations by:
+## 📁 Project Structure
 
-  * Name
-  * Location
-  * Entrance fee range
-  * Distance range
-  * Rating range
-* Sort destinations by:
+```txt
+visit-vista-cli/
+└── visitVista.go
+```
 
-  * Distance
-  * Entrance fee
-  * Rating
-* Interactive terminal-based menu
+The project is currently contained in a single Go file because it was created as a basic command-line application for learning purposes.
 
-## Tech Stack
+---
 
-* Go
-* Command-Line Interface
-* In-memory data storage using array and struct
-
-## Installation and Setup
+## 🚀 Getting Started
 
 ### Prerequisites
 
 Make sure Go is installed on your machine.
 
-You can check your Go installation by running:
+Check your Go installation by running:
 
 ```bash
 go version
 ```
 
-### Clone the Repository
+### Installation
+
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/visit-vista-cli.git
+git clone https://github.com/Ahmadnhy/visit-vista-cli.git
 ```
 
-### Navigate to the Project Directory
+2. Navigate to the project directory:
 
 ```bash
 cd visit-vista-cli
 ```
 
-### Run the Application
+3. Run the application:
 
 ```bash
 go run visitVista.go
 ```
 
-## Usage
+---
 
-After running the application, the main menu will appear in the terminal.
+## 💻 Usage
+
+After running the application, the main menu will appear in the terminal:
 
 ```txt
 ----------------------------------------------------------------
@@ -93,9 +93,11 @@ Pilih Opsi:
 
 Users can select a menu option by entering the corresponding number.
 
-## Data Structure
+---
 
-Each tourism destination is represented using a struct with the following fields:
+## 🧾 Data Fields
+
+Each tourism destination contains the following data:
 
 | Field     | Description                                 |
 | --------- | ------------------------------------------- |
@@ -107,44 +109,36 @@ Each tourism destination is represented using a struct with the following fields
 | Jarak     | Distance of the destination in kilometers   |
 | Rating    | Destination rating on a scale of 1.0 to 5.0 |
 
-## Folder Structure
+---
 
-```txt
-visit-vista-cli/
-└── visitVista.go
-```
-
-## Application Preview
-
-VisitVista CLI uses a terminal-based interface where users can manage tourism destination data through a numbered menu. The application can be tested directly by running the program using the setup instructions above.
-
-## My Role
-
-I developed this project as a basic Go programming exercise. My work included designing the command-line menu, creating the tourism destination data structure, implementing CRUD operations, and adding search and sorting features for destination records.
-
-## Learning Objectives
+## 🎯 Learning Objectives
 
 Through this project, I practiced:
 
-* Using structs and arrays in Go
-* Creating reusable functions
+* Creating and using structs in Go
+* Managing data with arrays
+* Building reusable functions
 * Handling user input from the terminal
 * Implementing basic CRUD operations
 * Searching data based on specific criteria
-* Sorting data in ascending and descending order
+* Sorting data in ascending or descending order
 * Structuring a simple terminal-based application
 
-## Current Limitations
+---
+
+## ⚠️ Current Limitations
 
 This project is still a beginner-level command-line application and has several limitations:
 
-* Data is stored temporarily in memory and will reset when the program stops
-* The application does not use a database or file storage
-* Some input handling is still basic
-* Search functionality is case-sensitive
-* The project does not include automated testing yet
+* Data is stored temporarily in memory and will reset when the program stops.
+* The application does not use a database or file-based storage.
+* Some input handling is still basic.
+* Search functionality is case-sensitive.
+* The project does not include automated testing yet.
 
-## Future Improvements
+---
+
+## 🔮 Future Improvements
 
 Possible improvements for future development include:
 
@@ -155,10 +149,18 @@ Possible improvements for future development include:
 * Adding unit tests for search and sorting functions
 * Creating a web-based version of the application
 
-## Project Status
+---
+
+## 📌 Project Status
 
 This project is completed as a basic command-line application for learning and portfolio documentation purposes.
 
-## License
+---
+
+## 📄 License
 
 This project is intended for educational and portfolio purposes.
+
+---
+
+Developed by Aisy Fadlillah (@aisyfadlillah)
