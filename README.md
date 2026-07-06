@@ -23,7 +23,7 @@ This project was developed to practice fundamental programming concepts in Go, i
 
 * Programming Language: Go
 * Interface: Command-Line Interface
-* Data Storage: In-memory storage using array and struct
+* Data Storage: In-memory storage using arrays and structs
 * Core Concepts: CRUD, searching, sorting, loops, conditionals, functions, and structured data
 
 ---
@@ -116,8 +116,8 @@ Each tourism destination contains the following data:
 
 This project applies several basic programming concepts:
 
-* Struct is used to represent tourism destination data.
-* Array is used as temporary in-memory storage.
+* Structs are used to represent tourism destination data.
+* Arrays are used as temporary in-memory storage.
 * Linear search is used to find destination data by ID.
 * Sorting is implemented manually using nested loops.
 * Each main operation is separated into different functions to keep the program easier to read and maintain.
@@ -151,13 +151,7 @@ Possible improvements for future development include:
 
 ## Project Status
 
-This project is completed as a basic command-line application for learning and portfolio documentation purposes.
-
----
-
-## License
-
-This project is intended for educational and portfolio purposes.
+This project is intended for learning and portfolio documentation purposes.
 
 ---
 
