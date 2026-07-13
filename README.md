@@ -4,20 +4,20 @@ VisitVista is a Go-based CLI (Command Line Interface) application for managing t
 
 ## Features
 
-1. **Add Tourist Attraction** — Add a new tourist attraction record (name, location, cost, distance, rating, description).
-2. **Edit Tourist Attraction** — Edit a specific attribute of an attraction by ID (name, location, cost, description, distance, or rating).
-3. **Delete Tourist Attraction** — Delete an attraction by ID. IDs of the remaining data are automatically re-sequenced.
+1. **Add Tourist Attraction**: Add a new tourist attraction record (name, location, cost, distance, rating, description).
+2. **Edit Tourist Attraction**: Edit a specific attribute of an attraction by ID (name, location, cost, description, distance, or rating).
+3. **Delete Tourist Attraction**: Delete an attraction by ID. IDs of the remaining data are automatically re-sequenced.
 4. **View Tourist Attractions**
    - View the full list of attractions in a table format.
    - View the full description of a specific attraction by ID.
    - View the list sorted by **Distance**, **Cost**, or **Rating** (ascending/descending).
-5. **Search Tourist Attractions** — Search by:
+5. **Search Tourist Attractions**: Search by:
    - Name
    - Location
    - Cost range (5 categories)
    - Distance range (5 categories)
    - Rating range (4 categories)
-6. **Exit** — End the program.
+6. **Exit**: End the program.
 
 ## Data Structure
 
@@ -35,7 +35,7 @@ type TempatWisata struct {
 }
 ```
 
-Data is stored in a fixed-size static array with a maximum capacity of **100 records** (`NMAX = 100`), with no file persistence — all data is kept in memory only and is lost every time the program is closed.
+Data is stored in a fixed-size static array with a maximum capacity of **100 records** (`NMAX = 100`), with no file persistence: all data is kept in memory only and is lost every time the program is closed.
 
 ## Requirements
 
@@ -95,7 +95,7 @@ Tempat wisata berhasil ditambahkan.
 
 - Maximum data capacity is **100 tourist attractions**, since the program uses a static array instead of a dynamic slice.
 - Data is **not persisted** (no file/database storage), so it will be lost when the program closes.
-- Rating must be within the range of **1.0 – 5.0**; invalid input will be rejected and the add operation will be cancelled.
+- Rating must be within the range of **1.0 to 5.0**; invalid input will be rejected and the add operation will be cancelled.
 - Search by name/location uses **exact matching** (case-sensitive, must match exactly) and only reads a single word (uses `fmt.Scan`, so it does not support input containing spaces).
 - After a record is deleted, the IDs of all remaining data are re-sequenced in order (1, 2, 3, ...).
 
