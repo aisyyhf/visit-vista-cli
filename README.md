@@ -1,86 +1,70 @@
-# VisitVista CLI
+# VisitVista
 
-VisitVista CLI is a command-line application built with Go for managing tourism destination data. The application allows users to add, edit, delete, view, search, and sort tourism destination records through an interactive terminal menu.
+VisitVista is a Go-based CLI (Command Line Interface) application for managing tourist attraction ("tempat wisata") data. It allows users to add, edit, delete, view, and search tourist attraction data interactively through the terminal.
 
-This project was developed to practice fundamental programming concepts in Go, including structured data, CRUD operations, searching, sorting, function decomposition, and terminal-based user interaction.
+## Features
 
----
+1. **Add Tourist Attraction** — Add a new tourist attraction record (name, location, cost, distance, rating, description).
+2. **Edit Tourist Attraction** — Edit a specific attribute of an attraction by ID (name, location, cost, description, distance, or rating).
+3. **Delete Tourist Attraction** — Delete an attraction by ID. IDs of the remaining data are automatically re-sequenced.
+4. **View Tourist Attractions**
+   - View the full list of attractions in a table format.
+   - View the full description of a specific attraction by ID.
+   - View the list sorted by **Distance**, **Cost**, or **Rating** (ascending/descending).
+5. **Search Tourist Attractions** — Search by:
+   - Name
+   - Location
+   - Cost range (5 categories)
+   - Distance range (5 categories)
+   - Rating range (4 categories)
+6. **Exit** — End the program.
 
-## Key Features
+## Data Structure
 
-* Add new tourism destination data with name, location, entrance fee, distance, rating, and description.
-* Edit existing destination information based on its ID.
-* Delete tourism destination records from the list.
-* View all stored tourism destinations in a formatted table.
-* View detailed descriptions of selected destinations.
-* Search destinations by name, location, entrance fee range, distance range, or rating range.
-* Sort destinations by distance, entrance fee, or rating in ascending or descending order.
-* Navigate the application through an interactive numbered CLI menu.
+Each tourist attraction is stored using the following struct:
 
----
-
-## Tech Stack
-
-* Programming Language: Go
-* Interface: Command-Line Interface
-* Data Storage: In-memory storage using arrays and structs
-* Core Concepts: CRUD, searching, sorting, loops, conditionals, functions, and structured data
-
----
-
-## Project Structure
-
-```txt
-visit-vista-cli/
-├── README.md
-└── visitVista.go
+```go
+type TempatWisata struct {
+    ID        int
+    Nama      string
+    Lokasi    string
+    Biaya     int
+    Deskripsi string
+    Jarak     float64
+    Rating    float64
+}
 ```
 
-The project is currently contained in a single Go source file because it focuses on fundamental command-line application logic and basic data management implementation.
+Data is stored in a fixed-size static array with a maximum capacity of **100 records** (`NMAX = 100`), with no file persistence — all data is kept in memory only and is lost every time the program is closed.
 
----
+## Requirements
 
-## Getting Started
+- [Go](https://go.dev/dl/) version 1.16 or later installed on your system.
 
-### Prerequisites
+## How to Run
 
-Make sure Go is installed on your machine.
+1. Save the code to a file, e.g. `main.go`.
+2. Open a terminal in the directory containing the file.
+3. Run one of the following commands:
 
-Check your Go installation by running:
+   **Run directly without building:**
+   ```bash
+   go run main.go
+   ```
 
-```bash
-go version
-```
-
-### Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/aisyyhf/visit-vista-cli.git
-```
-
-Navigate to the project directory:
-
-```bash
-cd visit-vista-cli
-```
-
-Run the application:
-
-```bash
-go run visitVista.go
-```
-
----
+   **Or build an executable first:**
+   ```bash
+   go build -o visitvista main.go
+   ./visitvista
+   ```
 
 ## Usage
 
-After running the application, the main menu will appear in the terminal:
+Once running, the main menu will appear:
 
-```txt
+```
 ----------------------------------------------------------------
-                           VisitVista
+                           VisitVista                           
 ----------------------------------------------------------------
 1. Tambah Tempat Wisata
 2. Edit Tempat Wisata
@@ -92,67 +76,29 @@ After running the application, the main menu will appear in the terminal:
 Pilih Opsi:
 ```
 
-Users can select a menu option by entering the corresponding number. Each option will guide the user through the required input, such as destination name, location, entrance fee, distance, rating, or description.
+Select the menu number you need, then follow the on-screen input prompts. (Note: menu labels and prompts are in Indonesian, since that is the program's original language.)
 
----
+### Example: Adding a New Record
 
-## Data Fields
+```
+Pilih Opsi: 1
+Masukkan nama tempat wisata: Pantai Kuta
+Masukkan lokasi tempat wisata: Bali
+Masukkan biaya tempat wisata: 50000
+Masukkan jarak tempat wisata (Dalam KM): 12.5
+Masukkan rating tempat wisata (dalam skala 1.0 - 5.0): 4.5
+Masukkan deskripsi tempat wisata: Pantai indah dengan sunset terbaik
+Tempat wisata berhasil ditambahkan.
+```
 
-Each tourism destination contains the following data:
+## Notes / Limitations
 
-| Field     | Description                               |
-| --------- | ----------------------------------------- |
-| ID        | Unique identifier for each destination    |
-| Nama      | Name of the tourism destination           |
-| Lokasi    | Location of the destination               |
-| Biaya     | Estimated entrance fee                    |
-| Deskripsi | Short description of the destination      |
-| Jarak     | Distance of the destination in kilometers |
-| Rating    | Destination rating on a scale of 1.0–5.0  |
+- Maximum data capacity is **100 tourist attractions**, since the program uses a static array instead of a dynamic slice.
+- Data is **not persisted** (no file/database storage), so it will be lost when the program closes.
+- Rating must be within the range of **1.0 – 5.0**; invalid input will be rejected and the add operation will be cancelled.
+- Search by name/location uses **exact matching** (case-sensitive, must match exactly) and only reads a single word (uses `fmt.Scan`, so it does not support input containing spaces).
+- After a record is deleted, the IDs of all remaining data are re-sequenced in order (1, 2, 3, ...).
 
----
+## License
 
-## Implementation Notes
-
-This project applies several basic programming concepts:
-
-* Structs are used to represent tourism destination data.
-* Arrays are used as temporary in-memory storage.
-* Linear search is used to find destination data by ID.
-* Sorting is implemented manually using nested loops.
-* Each main operation is separated into different functions to keep the program easier to read and maintain.
-
----
-
-## Current Limitations
-
-This project focuses on fundamental programming concepts and currently has several limitations:
-
-* Data is stored temporarily in memory and will reset when the program stops.
-* The application does not use a database or file-based storage.
-* Some input handling and validation can still be improved.
-* Search by name and location is still case-sensitive and requires exact input.
-* The project does not include automated testing yet.
-
----
-
-## Future Improvements
-
-Possible improvements for future development include:
-
-* Add persistent data storage using files or a database.
-* Improve input validation for numeric and text input.
-* Refactor the code into smaller modules.
-* Add case-insensitive and partial keyword search.
-* Add unit tests for search and sorting functions.
-* Create a web-based version of the application.
-
----
-
-## Project Status
-
-This project is intended for learning and portfolio documentation purposes.
-
----
-
-Developed by Aisy Fadlillah (@aisyyhf)
+Free to use and modify for learning purposes or further development.
